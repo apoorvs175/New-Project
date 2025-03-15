@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('your-background-image.jpg'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* Ensure the background is behind the video */
+}
+
+.video-container {
+    position: relative;
+    width: 100%; /* Adjust the width as needed */
+    max-width: 100vw; /* Maximum width */
+    height: 100vh; /* Set a specific height for the video */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Ensure the video container is above the background */
+}
+
+.video {
+    width: 100%;
+    height: 100%; /* Make the video fill the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.overlay {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    font-size: 2.7em; /* Adjust font size as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for visibility */
+    text-align: center; /* Center the text */
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect */
+}
+
+.coming-soon {
+    font-family: 'Arial Black', sans-serif; /* Bold font for emphasis */
+}
+
+.dynamic-text {
+    display: inline-block;
+    animation: slideIn 1s infinite alternate; /* Sliding effect */
+    color: #ffcc00; /* Highlight color for dynamic text */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
